@@ -1,0 +1,10 @@
+<div class="pending-requests-container">
+  <h2>Pending Friend Requests</h2>
+
+  <div *ngFor="let request of pendingRequests">
+    <p>
+      {{ request.sender.username }}
+      <button (click)="acceptFriendRequest(request.id)">Accept Request</button>
+    </p>
+  </div>
+</div>

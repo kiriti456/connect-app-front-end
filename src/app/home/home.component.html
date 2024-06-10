@@ -1,0 +1,45 @@
+<!-- home.component.html -->
+<div class="home-container">
+    
+    <div class="content-section">
+        <div class="sidebar">
+            <mat-tab-group (selectedIndexChange)="onTabChange($event)">
+                <mat-tab label="My Feed"></mat-tab>
+                <mat-tab label="Home"></mat-tab>
+                <mat-tab label="Search"></mat-tab>
+                <mat-tab label="Accept Requests"></mat-tab>
+                <mat-tab label="Logout"></mat-tab>
+            </mat-tab-group>
+        </div>
+
+        <div *ngIf="selectedTab === 'myFeed'">
+            <div class="login-container">
+            <h2 class="login-container__title">My Feed</h2>
+            <app-post-list></app-post-list>
+            </div>
+        </div>
+
+        <div *ngIf="selectedTab === 'home'">
+            <div class="login-container">
+            <h2 class="login-container__title">My Posts</h2>
+            <app-post></app-post>
+            </div>
+        </div>
+  
+    <div *ngIf="selectedTab === 'sendRequests'">
+        <div class="login-container">
+          <h2 class="login-container__title">Search</h2>
+          <app-send-request></app-send-request>
+        </div>
+    </div>
+  
+    <div *ngIf="selectedTab === 'acceptRequests'">
+        <div class="login-container">
+          <h2 class="login-container__title">My Friend Requests</h2>
+          <app-accept-request></app-accept-request>
+        </div>
+      </div>
+    </div>
+
+</div>
+  

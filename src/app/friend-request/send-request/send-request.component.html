@@ -1,0 +1,17 @@
+<div class="send-request-container">
+  <h2>Send Friend Request</h2>
+
+  <form [formGroup]="searchForm">
+    <label for="searchQuery">Search Users:</label>
+    <input type="text" id="searchQuery" formControlName="searchQuery" />
+
+    <div *ngIf="searchResults$ | async as searchResults">
+      <div *ngFor="let user of searchResults">
+        <p>
+          {{ user.username }}
+          <button (click)="sendFriendRequest(user.id)">Send Request</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

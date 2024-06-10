@@ -1,0 +1,13 @@
+<h1>My Feed</h1>
+<div *ngIf="userPosts">
+    <h2>User Posts (User ID: {{ userId }})</h2>
+    <ul>
+      <li *ngFor="let post of userPosts">
+        <div class="post-item">
+          <p><strong>Post ID:</strong> {{ post.id }}</p>
+          <p><strong>User ID:</strong> {{ post.user.id }}</p>
+          <p><strong>Content:</strong> {{ post.content }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
